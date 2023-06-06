@@ -7,12 +7,14 @@ import { BiSearch } from "react-icons/bi";
 import SideBarItem from "./SideBarItem";
 import SideBarSubItem from "./SideBarSubItem";
 import Library from "./Library";
+import { Song } from "@/types/types";
 
 interface SideBarProps {
   children: React.ReactNode;
+  songs: Song[];
 }
 
-const SideBar: React.FC<SideBarProps> = ({ children }) => {
+const SideBar: React.FC<SideBarProps> = ({ children, songs }) => {
   const pathName = usePathname();
   const routes = useMemo(
     () => [
@@ -44,7 +46,7 @@ const SideBar: React.FC<SideBarProps> = ({ children }) => {
         </SideBarItem>
         <SideBarItem>
           <div className="h-full overflow-y-scroll">
-            <Library />
+            <Library songs={songs} />
           </div>
         </SideBarItem>
       </div>
