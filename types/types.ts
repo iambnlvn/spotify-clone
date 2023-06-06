@@ -9,6 +9,14 @@ export interface UserDetails {
   billing_address?: Stripe.Address;
   payement_method?: Stripe.PaymentMethod[Stripe.PaymentMethod.Type];
 }
+export interface Song {
+  id: string;
+  user_id: string;
+  author: string;
+  title: string;
+  song_path: string;
+  image_path: string;
+}
 
 export interface Product {
   id: string;

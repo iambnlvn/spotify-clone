@@ -44,6 +44,7 @@ const UploadModal = () => {
         toast.error("Please select an image");
         return;
       }
+      values.title = values.title.trim().replace(/\s/g, "_");
       const songPrefix = `song-${values.title}`;
       const songUniqueID = uniqid(songPrefix);
 

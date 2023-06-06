@@ -1,5 +1,6 @@
 "use client";
 import AuthModal from "@/components/modal/AuthModal";
+import UploadModal from "@/components/modal/UploadModal";
 import { useEffect, useState } from "react";
 
 const ModalProvider = () => {
@@ -8,7 +9,12 @@ const ModalProvider = () => {
   // fix for hydration error
   useEffect(() => setIsMounted(true), []);
   if (!isMounted) return null;
-  return <AuthModal />;
+  return (
+    <>
+      <AuthModal />
+      <UploadModal />
+    </>
+  );
 };
 
 export default ModalProvider;

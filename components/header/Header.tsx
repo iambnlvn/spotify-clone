@@ -9,6 +9,7 @@ import { BiSearch } from "react-icons/bi";
 import useAuthModal from "@/hooks/useAuthModal";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUser } from "@/hooks/useUser";
+import { toast } from "react-hot-toast";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -22,8 +23,9 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
   const { user } = useUser();
 
   const handleLogout = async () => {
-    const error = await supabaseClient.auth.signOut();
+    const { error } = await supabaseClient.auth.signOut();
     router.refresh();
+    error ? toast.error(error.message) : toast.success("Logged out");
   };
 
   return (
