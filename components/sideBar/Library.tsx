@@ -39,7 +39,7 @@ const Library: React.FC<LibraryProps> = ({ songs }) => {
           className="text-neutral-400 cursor-pointer hover:text-white transition"
         />
       </div>
-      <div className="flex flex-col gap-y-2 mt-4 px-3 overflow-y-scroll">
+      <div className="flex flex-col gap-y-2 mt-4 px-3 overflow-y-auto">
         {songs.map((song) => (
           <LibraryItem key={song.id} song={song} onClick={() => {}} />
         ))}

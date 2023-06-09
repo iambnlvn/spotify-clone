@@ -45,12 +45,12 @@ const SideBar: React.FC<SideBarProps> = ({ children, songs }) => {
           </div>
         </SideBarItem>
         <SideBarItem>
-          <div className="h-full overflow-y-scroll">
+          <div className="h-full overflow-y-auto">
             <Library songs={songs} />
           </div>
         </SideBarItem>
       </div>
-      <main className="h-full flex-1 py-2 overfow-y-auto ">{children}</main>
+      <main className="h-full flex-1 py-2 overflow-y-auto">{children}</main>
     </div>
   );
 };
